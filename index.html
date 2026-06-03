@@ -1,103 +1,368 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Топ Донатеров</title>
+<title>The Finest Human</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 40px auto;
-    background: #f5f5f5;
-    padding: 20px;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1 {
-    text-align: center;
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    color:white;
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    animation:bgMove 20s infinite alternate;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
+@keyframes bgMove{
+    from{
+        background-position:center top;
+    }
+    to{
+        background-position:center bottom;
+    }
 }
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    backdrop-filter:blur(2px);
+    z-index:-1;
 }
 
-th {
-    background: #333;
-    color: white;
+header{
+    text-align:center;
+    padding:40px 20px 20px;
 }
 
-.gold { background: #ffd700; }
-.silver { background: #c0c0c0; }
-.bronze { background: #cd7f32; color: white; }
-
-.donate-btn {
-    display: block;
-    width: 200px;
-    margin: 20px auto;
-    padding: 15px;
-    text-align: center;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
+header h1{
+    font-size:60px;
+    text-shadow:0 0 20px pink;
+    animation:glow 3s infinite alternate;
 }
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px pink;
+    }
+    to{
+        text-shadow:0 0 35px #ffb7d5;
+    }
+}
+
+.subtitle{
+    margin-top:10px;
+    opacity:0.8;
+    font-size:18px;
+}
+
+.total-box{
+    width:300px;
+    margin:20px auto;
+    text-align:center;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:15px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 20px rgba(255,192,203,0.3);
+    animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px;
+}
+
+.btn{
+    padding:16px 30px;
+    border-radius:15px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(255,192,203,0.25);
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:rgba(255,182,193,0.25);
+}
+
+.board{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+    background:rgba(255,255,255,0.08);
+    border-radius:25px;
+    backdrop-filter:blur(12px);
+    overflow:hidden;
+    box-shadow:0 0 30px rgba(255,192,203,0.25);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:rgba(255,182,193,0.3);
+    padding:18px;
+    font-size:18px;
+}
+
+td{
+    padding:18px;
+    text-align:center;
+    transition:0.3s;
+}
+
+tr{
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover{
+    background:rgba(255,255,255,0.08);
+    transform:scale(1.01);
+}
+
+.gold{
+    background:linear-gradient(90deg,#ffd70088,#fff4b088);
+}
+
+.silver{
+    background:linear-gradient(90deg,#c0c0c088,#f2f2f288);
+}
+
+.bronze{
+    background:linear-gradient(90deg,#cd7f3288,#e0a96d88);
+}
+
+.counter-section{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:40px;
+}
+
+.counter{
+    width:180px;
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.1);
+    text-align:center;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 20px rgba(255,192,203,0.25);
+}
+
+.counter h2{
+    font-size:35px;
+    margin-bottom:5px;
+}
+
+.music{
+    text-align:center;
+    margin:30px;
+}
+
+footer{
+    text-align:center;
+    margin:40px;
+    opacity:0.7;
+}
+
+.petals span{
+    position:fixed;
+    top:-50px;
+    color:pink;
+    font-size:25px;
+    animation:fall linear infinite;
+    z-index:-1;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-10vh) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>🏆 Топ Донатеров</h1>
+<div class="overlay"></div>
 
-<a class="donate-btn" href="https://www.paypal.com/donations">
-    💰 Поддержать проект
+<div class="petals">
+<span style="left:5%;animation-duration:10s;">🌸</span>
+<span style="left:15%;animation-duration:15s;">🌸</span>
+<span style="left:25%;animation-duration:12s;">🌸</span>
+<span style="left:40%;animation-duration:18s;">🌸</span>
+<span style="left:55%;animation-duration:14s;">🌸</span>
+<span style="left:70%;animation-duration:16s;">🌸</span>
+<span style="left:85%;animation-duration:11s;">🌸</span>
+<span style="left:95%;animation-duration:17s;">🌸</span>
+</div>
+
+<header>
+<h1>🌸 THE FINEST HUMAN 🌸</h1>
+<div class="subtitle">
+Cherry Blossom Support Leaderboard
+</div>
+</header>
+
+<div class="total-box">
+<h2 id="total">$0</h2>
+<p>Total Donations</p>
+</div>
+
+<div class="buttons">
+<a class="btn" href="https://ko-fi.com/" target="_blank">
+💖 Donate
 </a>
 
-<table id="leaderboard">
-    <thead>
-        <tr>
-            <th>Место</th>
-            <th>Имя</th>
-            <th>Сумма ($)</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
+<a class="btn" href="https://paypal.com/" target="_blank">
+💸 PayPal
+</a>
+</div>
+
+<div class="board">
+<table>
+
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Donation</th>
+</tr>
+</thead>
+
+<tbody id="leaderboard"></tbody>
+
 </table>
+</div>
+
+<div class="counter-section">
+
+<div class="counter">
+<h2 id="people">0</h2>
+<p>Supporters</p>
+</div>
+
+<div class="counter">
+<h2 id="top">$0</h2>
+<p>Top Donation</p>
+</div>
+
+<div class="counter">
+<h2>24/7</h2>
+<p>Community</p>
+</div>
+
+</div>
+
+<div class="music">
+
+<audio controls autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<footer>
+Made with 🌸 for the community
+</footer>
 
 <script>
+
 let donors = [
-    {name: "Alex", amount: 150},
-    {name: "Ali", amount: 90},
-    {name: "Max", amount: 50}
+
+{name:"Sakura",amount:1200},
+{name:"Shadow",amount:950},
+{name:"Nova",amount:700},
+{name:"Zen",amount:500},
+{name:"Luna",amount:250},
+{name:"Ghost",amount:150}
+
 ];
 
-donors.sort((a,b) => b.amount - a.amount);
+donors.sort((a,b)=>b.amount-a.amount);
 
-const tbody = document.querySelector("#leaderboard tbody");
+const board = document.getElementById("leaderboard");
 
-donors.forEach((donor,index) => {
-    let row = document.createElement("tr");
+let total = 0;
 
-    if(index === 0) row.className = "gold";
-    if(index === 1) row.className = "silver";
-    if(index === 2) row.className = "bronze";
+donors.forEach((donor,index)=>{
 
-    row.innerHTML = `
-        <td>${index+1}</td>
-        <td>${donor.name}</td>
-        <td>${donor.amount}</td>
-    `;
+total += donor.amount;
 
-    tbody.appendChild(row);
+let row = document.createElement("tr");
+
+if(index===0) row.className="gold";
+if(index===1) row.className="silver";
+if(index===2) row.className="bronze";
+
+let medal = index+1;
+
+if(index===0) medal="🥇";
+if(index===1) medal="🥈";
+if(index===2) medal="🥉";
+
+row.innerHTML=`
+
+<td>${medal}</td>
+<td>${donor.name}</td>
+<td>$${donor.amount}</td>
+
+`;
+
+board.appendChild(row);
+
 });
+
+document.getElementById("total").innerHTML="$"+total;
+document.getElementById("people").innerHTML=donors.length;
+document.getElementById("top").innerHTML="$"+donors[0].amount;
+
 </script>
 
 </body>
