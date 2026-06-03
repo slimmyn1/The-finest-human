@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>The Finest Human</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -20,308 +22,461 @@ body{
     overflow-x:hidden;
     color:white;
     min-height:100vh;
+
     background:
-    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1974&auto=format&fit=crop');
+    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.88)),
+    url('https://images3.alphacoders.com/137/thumb-1920-1379845.jpg');
+
     background-size:cover;
     background-position:center;
-    animation:bgMove 20s infinite alternate;
+    background-attachment:fixed;
 }
 
-@keyframes bgMove{
-    from{
-        background-position:center top;
-    }
-    to{
-        background-position:center bottom;
-    }
-}
+/* SAKURA */
 
-.overlay{
+.petals span{
     position:fixed;
-    width:100%;
-    height:100%;
-    backdrop-filter:blur(2px);
-    z-index:-1;
+    top:-10%;
+    font-size:28px;
+    animation:fall linear infinite;
+    z-index:0;
+    opacity:0.8;
 }
+
+.petals span:nth-child(1){
+    left:5%;
+    animation-duration:10s;
+}
+
+.petals span:nth-child(2){
+    left:15%;
+    animation-duration:14s;
+}
+
+.petals span:nth-child(3){
+    left:28%;
+    animation-duration:12s;
+}
+
+.petals span:nth-child(4){
+    left:40%;
+    animation-duration:18s;
+}
+
+.petals span:nth-child(5){
+    left:55%;
+    animation-duration:15s;
+}
+
+.petals span:nth-child(6){
+    left:70%;
+    animation-duration:11s;
+}
+
+.petals span:nth-child(7){
+    left:82%;
+    animation-duration:17s;
+}
+
+.petals span:nth-child(8){
+    left:94%;
+    animation-duration:13s;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-10vh) rotate(0deg);
+    }
+
+    100%{
+        transform:translateY(120vh) rotate(360deg);
+    }
+
+}
+
+/* HEADER */
 
 header{
     text-align:center;
-    padding:40px 20px 20px;
+    padding:50px 20px 20px;
+    position:relative;
+    z-index:2;
 }
 
 header h1{
-    font-size:60px;
-    text-shadow:0 0 20px pink;
+    font-size:65px;
+    text-shadow:0 0 25px #ff9ac7;
     animation:glow 3s infinite alternate;
 }
 
 @keyframes glow{
+
     from{
-        text-shadow:0 0 10px pink;
+        text-shadow:0 0 15px #ff9ac7;
     }
+
     to{
-        text-shadow:0 0 35px #ffb7d5;
+        text-shadow:0 0 40px #ffc0cb;
     }
+
 }
 
 .subtitle{
-    margin-top:10px;
+    margin-top:15px;
+    font-size:20px;
     opacity:0.8;
-    font-size:18px;
 }
 
-.total-box{
-    width:300px;
-    margin:20px auto;
-    text-align:center;
-    background:rgba(255,255,255,0.1);
-    border:1px solid rgba(255,255,255,0.2);
-    padding:15px;
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 20px rgba(255,192,203,0.3);
-    animation:float 3s infinite ease-in-out;
-}
+/* STATS */
 
-@keyframes float{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin:30px;
-}
-
-.btn{
-    padding:16px 30px;
-    border-radius:15px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.2);
-    backdrop-filter:blur(10px);
-    transition:0.3s;
-    box-shadow:0 0 15px rgba(255,192,203,0.25);
-}
-
-.btn:hover{
-    transform:scale(1.08);
-    background:rgba(255,182,193,0.25);
-}
-
-.board{
-    width:90%;
-    max-width:900px;
-    margin:30px auto;
-    background:rgba(255,255,255,0.08);
-    border-radius:25px;
-    backdrop-filter:blur(12px);
-    overflow:hidden;
-    box-shadow:0 0 30px rgba(255,192,203,0.25);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th{
-    background:rgba(255,182,193,0.3);
-    padding:18px;
-    font-size:18px;
-}
-
-td{
-    padding:18px;
-    text-align:center;
-    transition:0.3s;
-}
-
-tr{
-    border-bottom:1px solid rgba(255,255,255,0.1);
-}
-
-tr:hover{
-    background:rgba(255,255,255,0.08);
-    transform:scale(1.01);
-}
-
-.gold{
-    background:linear-gradient(90deg,#ffd70088,#fff4b088);
-}
-
-.silver{
-    background:linear-gradient(90deg,#c0c0c088,#f2f2f288);
-}
-
-.bronze{
-    background:linear-gradient(90deg,#cd7f3288,#e0a96d88);
-}
-
-.counter-section{
+.stats{
     display:flex;
     justify-content:center;
     gap:25px;
     flex-wrap:wrap;
-    margin:40px;
+    margin:35px;
+    position:relative;
+    z-index:2;
 }
 
-.counter{
-    width:180px;
-    padding:20px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.1);
+.stat-box{
+
+    width:220px;
+    padding:25px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    border-radius:25px;
+
     text-align:center;
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 20px rgba(255,192,203,0.25);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 0 25px rgba(255,192,203,0.15);
+
+    transition:0.3s;
 }
 
-.counter h2{
-    font-size:35px;
-    margin-bottom:5px;
+.stat-box:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 0 30px rgba(255,192,203,0.3);
+
 }
+
+.stat-box h2{
+
+    font-size:38px;
+    margin-bottom:10px;
+
+}
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+    position:relative;
+    z-index:2;
+}
+
+.btn{
+
+    padding:18px 35px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:bold;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(10px);
+
+    transition:0.3s;
+
+    box-shadow:0 0 20px rgba(255,192,203,0.15);
+
+}
+
+.btn:hover{
+
+    transform:scale(1.08);
+
+    background:rgba(255,182,193,0.15);
+
+    box-shadow:0 0 30px rgba(255,182,193,0.4);
+
+}
+
+/* LEADERBOARD */
+
+.board{
+
+    width:92%;
+    max-width:950px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,0.07);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 0 30px rgba(255,192,203,0.15);
+
+    position:relative;
+    z-index:2;
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:rgba(255,182,193,0.2);
+
+    padding:20px;
+
+    font-size:20px;
+
+}
+
+td{
+
+    padding:22px;
+    text-align:center;
+
+}
+
+tr{
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    transition:0.3s;
+
+}
+
+tr:hover{
+
+    background:rgba(255,255,255,0.05);
+
+    transform:scale(1.01);
+
+}
+
+.gold{
+
+    background:linear-gradient(90deg,#ffd70055,#fff2a855);
+
+}
+
+.silver{
+
+    background:linear-gradient(90deg,#c0c0c055,#ffffff55);
+
+}
+
+.bronze{
+
+    background:linear-gradient(90deg,#cd7f3255,#d89b6655);
+
+}
+
+/* AUDIO */
 
 .music{
+
     text-align:center;
-    margin:30px;
+    margin-top:40px;
+    position:relative;
+    z-index:2;
+
 }
+
+audio{
+
+    width:320px;
+    opacity:0.9;
+
+}
+
+/* FOOTER */
 
 footer{
+
     text-align:center;
-    margin:40px;
+    margin:50px;
     opacity:0.7;
-}
+    position:relative;
+    z-index:2;
 
-.petals span{
-    position:fixed;
-    top:-50px;
-    color:pink;
-    font-size:25px;
-    animation:fall linear infinite;
-    z-index:-1;
-}
-
-@keyframes fall{
-    0%{
-        transform:translateY(-10vh) rotate(0deg);
-        opacity:1;
-    }
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-    }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<!-- MUSIC -->
+
+<audio autoplay loop id="bgmusic">
+
+<source src="https://cdn.pixabay.com/audio/2023/03/14/audio_8f49b7d3e8.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- PETALS -->
 
 <div class="petals">
-<span style="left:5%;animation-duration:10s;">🌸</span>
-<span style="left:15%;animation-duration:15s;">🌸</span>
-<span style="left:25%;animation-duration:12s;">🌸</span>
-<span style="left:40%;animation-duration:18s;">🌸</span>
-<span style="left:55%;animation-duration:14s;">🌸</span>
-<span style="left:70%;animation-duration:16s;">🌸</span>
-<span style="left:85%;animation-duration:11s;">🌸</span>
-<span style="left:95%;animation-duration:17s;">🌸</span>
+
+<span>🌸</span>
+<span>🌸</span>
+<span>🌸</span>
+<span>🌸</span>
+<span>🌸</span>
+<span>🌸</span>
+<span>🌸</span>
+<span>🌸</span>
+
 </div>
+
+<!-- HEADER -->
 
 <header>
+
 <h1>🌸 THE FINEST HUMAN 🌸</h1>
+
 <div class="subtitle">
-Cherry Blossom Support Leaderboard
+
+Cherry Blossom Donation Leaderboard
+
 </div>
+
 </header>
 
-<div class="total-box">
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat-box">
+
 <h2 id="total">$0</h2>
+
 <p>Total Donations</p>
+
 </div>
 
+<div class="stat-box">
+
+<h2 id="supporters">0</h2>
+
+<p>Supporters</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2 id="top">$0</h2>
+
+<p>Top Donation</p>
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+
 <div class="buttons">
+
 <a class="btn" href="https://ko-fi.com/" target="_blank">
+
 💖 Donate
+
 </a>
 
 <a class="btn" href="https://paypal.com/" target="_blank">
+
 💸 PayPal
+
 </a>
+
 </div>
 
+<!-- LEADERBOARD -->
+
 <div class="board">
+
 <table>
 
 <thead>
+
 <tr>
+
 <th>Rank</th>
 <th>Name</th>
 <th>Donation</th>
+
 </tr>
+
 </thead>
 
 <tbody id="leaderboard"></tbody>
 
 </table>
-</div>
-
-<div class="counter-section">
-
-<div class="counter">
-<h2 id="people">0</h2>
-<p>Supporters</p>
-</div>
-
-<div class="counter">
-<h2 id="top">$0</h2>
-<p>Top Donation</p>
-</div>
-
-<div class="counter">
-<h2>24/7</h2>
-<p>Community</p>
-</div>
 
 </div>
+
+<!-- AUDIO CONTROL -->
 
 <div class="music">
 
-<audio controls autoplay loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+<audio controls loop>
+
+<source src="https://cdn.pixabay.com/audio/2023/03/14/audio_8f49b7d3e8.mp3" type="audio/mpeg">
+
 </audio>
 
 </div>
 
 <footer>
+
 Made with 🌸 for the community
+
 </footer>
 
 <script>
 
+/* DONORS */
+
 let donors = [
 
-{name:"Sakura",amount:1200},
-{name:"Shadow",amount:950},
-{name:"Nova",amount:700},
-{name:"Zen",amount:500},
-{name:"Luna",amount:250},
-{name:"Ghost",amount:150}
+{name:"Sakura",amount:2400},
+{name:"Shadow",amount:1800},
+{name:"Nova",amount:1200},
+{name:"Zen",amount:950},
+{name:"Luna",amount:600},
+{name:"Ghost",amount:300}
 
 ];
 
@@ -333,35 +488,45 @@ let total = 0;
 
 donors.forEach((donor,index)=>{
 
-total += donor.amount;
+    total += donor.amount;
 
-let row = document.createElement("tr");
+    let row = document.createElement("tr");
 
-if(index===0) row.className="gold";
-if(index===1) row.className="silver";
-if(index===2) row.className="bronze";
+    if(index===0) row.className="gold";
+    if(index===1) row.className="silver";
+    if(index===2) row.className="bronze";
 
-let medal = index+1;
+    let medal = index + 1;
 
-if(index===0) medal="🥇";
-if(index===1) medal="🥈";
-if(index===2) medal="🥉";
+    if(index===0) medal = "🥇";
+    if(index===1) medal = "🥈";
+    if(index===2) medal = "🥉";
 
-row.innerHTML=`
+    row.innerHTML = `
 
-<td>${medal}</td>
-<td>${donor.name}</td>
-<td>$${donor.amount}</td>
+    <td>${medal}</td>
+    <td>${donor.name}</td>
+    <td>$${donor.amount}</td>
 
-`;
+    `;
 
-board.appendChild(row);
+    board.appendChild(row);
 
 });
 
-document.getElementById("total").innerHTML="$"+total;
-document.getElementById("people").innerHTML=donors.length;
-document.getElementById("top").innerHTML="$"+donors[0].amount;
+document.getElementById("total").innerHTML = "$" + total;
+
+document.getElementById("supporters").innerHTML = donors.length;
+
+document.getElementById("top").innerHTML = "$" + donors[0].amount;
+
+/* FORCE MUSIC PLAY */
+
+window.addEventListener("click", () => {
+
+    document.getElementById("bgmusic").play();
+
+});
 
 </script>
 
