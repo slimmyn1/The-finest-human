@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Finest Human</title>
+<title>The Most Generous Person</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -18,29 +18,33 @@
 }
 
 body{
+
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
     color:white;
     min-height:100vh;
 
     background:
-    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.88)),
+    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.9)),
     url('https://images3.alphacoders.com/137/thumb-1920-1379845.jpg');
 
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
+
 }
 
 /* SAKURA */
 
 .petals span{
+
     position:fixed;
     top:-10%;
     font-size:28px;
-    animation:fall linear infinite;
     z-index:0;
+    animation:fall linear infinite;
     opacity:0.8;
+
 }
 
 .petals span:nth-child(1){
@@ -50,37 +54,37 @@ body{
 
 .petals span:nth-child(2){
     left:15%;
-    animation-duration:14s;
+    animation-duration:15s;
 }
 
 .petals span:nth-child(3){
     left:28%;
-    animation-duration:12s;
+    animation-duration:13s;
 }
 
 .petals span:nth-child(4){
-    left:40%;
+    left:42%;
     animation-duration:18s;
 }
 
 .petals span:nth-child(5){
     left:55%;
-    animation-duration:15s;
+    animation-duration:12s;
 }
 
 .petals span:nth-child(6){
     left:70%;
-    animation-duration:11s;
+    animation-duration:16s;
 }
 
 .petals span:nth-child(7){
     left:82%;
-    animation-duration:17s;
+    animation-duration:11s;
 }
 
 .petals span:nth-child(8){
     left:94%;
-    animation-duration:13s;
+    animation-duration:17s;
 }
 
 @keyframes fall{
@@ -98,16 +102,22 @@ body{
 /* HEADER */
 
 header{
+
     text-align:center;
-    padding:50px 20px 20px;
+    padding:60px 20px 30px;
     position:relative;
     z-index:2;
+
 }
 
 header h1{
-    font-size:65px;
+
+    font-size:68px;
+
     text-shadow:0 0 25px #ff9ac7;
+
     animation:glow 3s infinite alternate;
+
 }
 
 @keyframes glow{
@@ -123,48 +133,54 @@ header h1{
 }
 
 .subtitle{
+
     margin-top:15px;
     font-size:20px;
-    opacity:0.8;
+    opacity:0.85;
+
 }
 
 /* STATS */
 
 .stats{
+
     display:flex;
     justify-content:center;
-    gap:25px;
     flex-wrap:wrap;
-    margin:35px;
+    gap:25px;
+    margin:40px;
     position:relative;
     z-index:2;
+
 }
 
 .stat-box{
 
     width:220px;
+
     padding:25px;
+
+    border-radius:25px;
 
     background:rgba(255,255,255,0.08);
 
     border:1px solid rgba(255,255,255,0.15);
 
-    border-radius:25px;
+    backdrop-filter:blur(12px);
 
     text-align:center;
 
-    backdrop-filter:blur(12px);
-
-    box-shadow:0 0 25px rgba(255,192,203,0.15);
+    box-shadow:0 0 25px rgba(255,192,203,0.12);
 
     transition:0.3s;
+
 }
 
 .stat-box:hover{
 
     transform:translateY(-8px) scale(1.03);
 
-    box-shadow:0 0 30px rgba(255,192,203,0.3);
+    box-shadow:0 0 35px rgba(255,192,203,0.25);
 
 }
 
@@ -178,13 +194,17 @@ header h1{
 /* BUTTONS */
 
 .buttons{
+
     display:flex;
     justify-content:center;
     gap:25px;
     flex-wrap:wrap;
+
     margin-bottom:40px;
+
     position:relative;
     z-index:2;
+
 }
 
 .btn{
@@ -201,13 +221,13 @@ header h1{
 
     background:rgba(255,255,255,0.08);
 
-    border:1px solid rgba(255,255,255,0.18);
+    border:1px solid rgba(255,255,255,0.15);
 
     backdrop-filter:blur(10px);
 
     transition:0.3s;
 
-    box-shadow:0 0 20px rgba(255,192,203,0.15);
+    box-shadow:0 0 20px rgba(255,192,203,0.12);
 
 }
 
@@ -217,7 +237,7 @@ header h1{
 
     background:rgba(255,182,193,0.15);
 
-    box-shadow:0 0 30px rgba(255,182,193,0.4);
+    box-shadow:0 0 30px rgba(255,182,193,0.35);
 
 }
 
@@ -226,7 +246,7 @@ header h1{
 .board{
 
     width:92%;
-    max-width:950px;
+    max-width:980px;
 
     margin:auto;
 
@@ -238,10 +258,11 @@ header h1{
 
     backdrop-filter:blur(12px);
 
-    box-shadow:0 0 30px rgba(255,192,203,0.15);
+    box-shadow:0 0 35px rgba(255,192,203,0.15);
 
     position:relative;
     z-index:2;
+
 }
 
 table{
@@ -255,7 +276,7 @@ th{
 
     background:rgba(255,182,193,0.2);
 
-    padding:20px;
+    padding:22px;
 
     font-size:20px;
 
@@ -302,12 +323,12 @@ tr:hover{
 
 }
 
-/* AUDIO */
+/* MUSIC */
 
 .music{
 
     text-align:center;
-    margin-top:40px;
+    margin-top:45px;
     position:relative;
     z-index:2;
 
@@ -326,7 +347,7 @@ footer{
 
     text-align:center;
     margin:50px;
-    opacity:0.7;
+    opacity:0.75;
     position:relative;
     z-index:2;
 
@@ -338,7 +359,7 @@ footer{
 
 <body>
 
-<!-- MUSIC -->
+<!-- BACKGROUND MUSIC -->
 
 <audio autoplay loop id="bgmusic">
 
@@ -365,11 +386,11 @@ footer{
 
 <header>
 
-<h1>🌸 THE FINEST HUMAN 🌸</h1>
+<h1>🌸 THE MOST GENEROUS PERSON 🌸</h1>
 
 <div class="subtitle">
 
-Cherry Blossom Donation Leaderboard
+The ultimate cherry blossom donation leaderboard
 
 </div>
 
@@ -447,7 +468,7 @@ Cherry Blossom Donation Leaderboard
 
 </div>
 
-<!-- AUDIO CONTROL -->
+<!-- AUDIO PLAYER -->
 
 <div class="music">
 
@@ -471,11 +492,11 @@ Made with 🌸 for the community
 
 let donors = [
 
-{name:"Sakura",amount:2400},
-{name:"Shadow",amount:1800},
-{name:"Nova",amount:1200},
-{name:"Zen",amount:950},
-{name:"Luna",amount:600},
+{name:"Sakura",amount:2500},
+{name:"Shadow",amount:1900},
+{name:"Nova",amount:1400},
+{name:"Zen",amount:1000},
+{name:"Luna",amount:650},
 {name:"Ghost",amount:300}
 
 ];
@@ -520,7 +541,7 @@ document.getElementById("supporters").innerHTML = donors.length;
 
 document.getElementById("top").innerHTML = "$" + donors[0].amount;
 
-/* FORCE MUSIC PLAY */
+/* FORCE AUTOPLAY */
 
 window.addEventListener("click", () => {
 
