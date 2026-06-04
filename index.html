@@ -336,9 +336,9 @@ background:linear-gradient(90deg,#c0c0c055,#ffffff55);
 background:linear-gradient(90deg,#cd7f3255,#d89b6655);
 }
 
-/* CHAT */
+/* DONATION CHAT */
 
-.chat{
+.donation-chat{
 
 width:92%;
 max-width:700px;
@@ -360,7 +360,7 @@ z-index:2;
 
 }
 
-.chat h2{
+.donation-chat h2{
 
 margin-bottom:20px;
 text-align:center;
@@ -369,7 +369,7 @@ text-align:center;
 
 .messages{
 
-height:260px;
+height:280px;
 overflow-y:auto;
 
 padding:15px;
@@ -378,70 +378,19 @@ background:rgba(0,0,0,0.2);
 
 border-radius:20px;
 
-margin-bottom:20px;
-
 }
 
 .message{
 
 margin-bottom:15px;
 
-padding:12px;
+padding:14px;
 
 border-radius:15px;
 
 background:rgba(255,255,255,0.08);
 
-}
-
-.input-box{
-
-display:flex;
-gap:10px;
-
-}
-
-.input-box input{
-
-flex:1;
-
-padding:14px;
-
-border:none;
-
-border-radius:15px;
-
-outline:none;
-
-background:rgba(255,255,255,0.1);
-
-color:white;
-
-}
-
-.input-box button{
-
-padding:14px 22px;
-
-border:none;
-
-border-radius:15px;
-
-background:#ff9ac7;
-
-color:black;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:0.3s;
-
-}
-
-.input-box button:hover{
-
-transform:scale(1.05);
+line-height:1.5;
 
 }
 
@@ -499,7 +448,7 @@ z-index:2;
 
 <div class="subtitle">
 
-The ultimate cherry blossom donation leaderboard
+the ultimate cherry blossom donation leaderboard
 
 </div>
 
@@ -535,9 +484,9 @@ The ultimate cherry blossom donation leaderboard
 
 <div class="stat-box">
 
-<h2 id="online">128</h2>
+<h2>24/7</h2>
 
-<p>Online Users</p>
+<p>Community</p>
 
 </div>
 
@@ -577,33 +526,13 @@ target="_blank">
 
 </div>
 
-<!-- CHAT -->
+<!-- DONATION CHAT -->
 
-<div class="chat">
+<div class="donation-chat">
 
-<h2>🌸 Community Chat</h2>
+<h2>💬 Live Donations</h2>
 
-<div class="messages" id="messages">
-
-<div class="message">
-👤 Sakura: Amazing project 🌸
-</div>
-
-<div class="message">
-👤 Nova: Love this design ✨
-</div>
-
-</div>
-
-<div class="input-box">
-
-<input type="text" id="msgInput" placeholder="Write message...">
-
-<button onclick="sendMessage()">
-Send
-</button>
-
-</div>
+<div class="messages" id="messages"></div>
 
 </div>
 
@@ -625,16 +554,14 @@ Made with 🌸 for the community
 
 <script>
 
-/* AUTO LEADERBOARD */
+/* DONORS */
 
 let donors = [
 
-{name:"Sakura",amount:2500},
-{name:"Shadow",amount:1900},
-{name:"Nova",amount:1400},
-{name:"Zen",amount:1000},
-{name:"Luna",amount:650},
-{name:"Ghost",amount:300}
+{name:"kai",amount:5,message:"w project fr"},
+{name:"mika",amount:2,message:"what is this gng 😭"},
+{name:"noah",amount:5,message:"this site clean ngl"},
+{name:"luna",amount:2,message:"thats good fr"}
 
 ];
 
@@ -642,17 +569,17 @@ function renderLeaderboard(){
 
 donors.sort((a,b)=>b.amount-a.amount);
 
-const board = document.getElementById("leaderboard");
+const board=document.getElementById("leaderboard");
 
 board.innerHTML="";
 
-let total = 0;
+let total=0;
 
 donors.forEach((donor,index)=>{
 
-total += donor.amount;
+total+=donor.amount;
 
-let row = document.createElement("tr");
+let row=document.createElement("tr");
 
 if(index===0) row.className="gold";
 if(index===1) row.className="silver";
@@ -688,78 +615,67 @@ document.getElementById("topAmount").innerHTML="$"+donors[0].amount;
 
 renderLeaderboard();
 
-/* AUTO RANDOM DONATIONS */
+/* LIVE DONATION CHAT */
 
-setInterval(()=>{
+function renderMessages(){
 
-let randomPeople=["Moon","Akira","Lily","Yuki","Rei"];
+const messages=document.getElementById("messages");
 
-let randomName=randomPeople[Math.floor(Math.random()*randomPeople.length)];
+messages.innerHTML="";
 
-let randomAmount=Math.floor(Math.random()*500)+50;
+donors.forEach(donor=>{
 
-donors.push({
+let div=document.createElement("div");
 
-name:randomName,
-amount:randomAmount
+div.className="message";
+
+div.innerHTML=`
+
+<b>💖 ${donor.name}</b> donated <b>$${donor.amount}</b><br>
+"${donor.message}"
+
+`;
+
+messages.appendChild(div);
 
 });
 
-renderLeaderboard();
-
-},12000);
-
-/* CHAT */
-
-function sendMessage(){
-
-let input=document.getElementById("msgInput");
-
-let text=input.value.trim();
-
-if(text==="") return;
-
-let msg=document.createElement("div");
-
-msg.className="message";
-
-msg.innerHTML="👤 You: "+text;
-
-document.getElementById("messages").appendChild(msg);
-
-input.value="";
-
-document.getElementById("messages").scrollTop=
-document.getElementById("messages").scrollHeight;
-
 }
 
-/* FAKE LIVE CHAT */
+renderMessages();
 
-let autoMessages=[
+/* FAKE RANDOM DONATIONS */
 
-"Beautiful website 🌸",
-"Donated 20$ 💖",
-"This leaderboard is awesome",
-"Love the cherry blossom theme ✨",
-"Supporting the project 🔥"
+let randomDonations=[
+
+{name:"ken",amount:2,message:"nah this fire 😭"},
+{name:"yuki",amount:5,message:"bro cooked"},
+{name:"alex",amount:2,message:"clean website fr"},
+{name:"rei",amount:5,message:"what is this gng"},
+{name:"matt",amount:2,message:"music majestic"},
+{name:"leo",amount:5,message:"yo this tuff"},
+{name:"niko",amount:2,message:"w design"},
+{name:"mia",amount:5,message:"ngl beautiful"}
 
 ];
 
 setInterval(()=>{
 
-let msg=document.createElement("div");
+let random=randomDonations[Math.floor(Math.random()*randomDonations.length)];
 
-msg.className="message";
+donors.unshift(random);
 
-msg.innerHTML="👤 Guest: "+autoMessages[Math.floor(Math.random()*autoMessages.length)];
+if(donors.length>4){
 
-document.getElementById("messages").appendChild(msg);
+donors.pop();
 
-document.getElementById("messages").scrollTop=
-document.getElementById("messages").scrollHeight;
+}
 
-},9000);
+renderLeaderboard();
+
+renderMessages();
+
+},10000);
 
 /* MUSIC */
 
