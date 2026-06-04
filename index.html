@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@ color:white;
 min-height:100vh;
 
 background:
-linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.92)),
+linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.93)),
 url('https://images3.alphacoders.com/137/thumb-1920-1379845.jpg');
 
 background-size:cover;
@@ -34,7 +35,7 @@ background-attachment:fixed;
 
 }
 
-/* PETALS */
+/* SAKURA */
 
 .petals span{
 
@@ -81,7 +82,7 @@ z-index:2;
 
 header h1{
 
-font-size:65px;
+font-size:68px;
 text-shadow:0 0 30px #ff9ac7;
 animation:glow 3s infinite alternate;
 
@@ -103,7 +104,7 @@ text-shadow:0 0 45px #ffc0cb;
 
 margin-top:15px;
 font-size:20px;
-opacity:0.85;
+opacity:0.9;
 
 }
 
@@ -111,10 +112,10 @@ opacity:0.85;
 
 .top-donator{
 
-width:340px;
+width:360px;
 margin:25px auto;
 
-padding:25px;
+padding:30px;
 
 border-radius:30px;
 
@@ -126,7 +127,7 @@ border:1px solid rgba(255,255,255,0.15);
 
 text-align:center;
 
-box-shadow:0 0 35px rgba(255,215,0,0.2);
+box-shadow:0 0 35px rgba(255,215,0,0.25);
 
 position:relative;
 z-index:2;
@@ -138,7 +139,7 @@ animation:float 4s infinite ease-in-out;
 .top-donator h2{
 
 font-size:30px;
-margin-bottom:10px;
+margin-bottom:12px;
 
 }
 
@@ -369,7 +370,7 @@ text-align:center;
 
 .messages{
 
-height:280px;
+height:300px;
 overflow-y:auto;
 
 padding:15px;
@@ -392,14 +393,44 @@ background:rgba(255,255,255,0.08);
 
 line-height:1.5;
 
+animation:fadeIn 0.5s ease;
+
 }
 
-/* AUDIO */
+@keyframes fadeIn{
 
-.music{
+from{
+opacity:0;
+transform:translateY(10px);
+}
 
-text-align:center;
-margin-top:40px;
+to{
+opacity:1;
+transform:translateY(0px);
+}
+
+}
+
+/* LIVE ALERTS */
+
+.alerts{
+
+width:92%;
+max-width:900px;
+margin:40px auto;
+
+padding:20px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,0.06);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,0.12);
+
+box-shadow:0 0 30px rgba(255,192,203,0.15);
+
 position:relative;
 z-index:2;
 
@@ -423,11 +454,15 @@ z-index:2;
 
 <body>
 
+<!-- MUSIC -->
+
 <audio autoplay loop id="bgmusic">
 
 <source src="https://cdn.pixabay.com/audio/2023/03/14/audio_8f49b7d3e8.mp3" type="audio/mpeg">
 
 </audio>
+
+<!-- PETALS -->
 
 <div class="petals">
 
@@ -442,6 +477,8 @@ z-index:2;
 
 </div>
 
+<!-- HEADER -->
+
 <header>
 
 <h1>🌸 THE MOST GENEROUS PERSON 🌸</h1>
@@ -454,21 +491,25 @@ the ultimate cherry blossom donation leaderboard
 
 </header>
 
+<!-- TOP DONATOR -->
+
 <div class="top-donator">
 
 <h2>👑 TOP DONATOR</h2>
 
-<h1 id="topName">---</h1>
+<h1 id="topName">👑 Илюша</h1>
 
-<h3 id="topAmount">$0</h3>
+<h3 id="topAmount">$999</h3>
 
 </div>
+
+<!-- STATS -->
 
 <div class="stats">
 
 <div class="stat-box">
 
-<h2 id="total">$0</h2>
+<h2 id="total">$1008</h2>
 
 <p>Total Donations</p>
 
@@ -476,7 +517,7 @@ the ultimate cherry blossom donation leaderboard
 
 <div class="stat-box">
 
-<h2 id="supporters">0</h2>
+<h2 id="supporters">4</h2>
 
 <p>Supporters</p>
 
@@ -484,13 +525,15 @@ the ultimate cherry blossom donation leaderboard
 
 <div class="stat-box">
 
-<h2>24/7</h2>
+<h2 id="online">128</h2>
 
-<p>Community</p>
+<p>Online Users</p>
+
+</div>
 
 </div>
 
-</div>
+<!-- BUTTON -->
 
 <div class="buttons">
 
@@ -503,6 +546,8 @@ target="_blank">
 </a>
 
 </div>
+
+<!-- LEADERBOARD -->
 
 <div class="board">
 
@@ -530,21 +575,38 @@ target="_blank">
 
 <div class="donation-chat">
 
-<h2>💬 Live Donations</h2>
+<h2>💬 Donation Messages</h2>
 
 <div class="messages" id="messages"></div>
 
 </div>
 
-<div class="music">
+<!-- LIVE ALERTS -->
 
-<audio controls loop>
+<div class="alerts">
 
-<source src="https://cdn.pixabay.com/audio/2023/03/14/audio_8f49b7d3e8.mp3" type="audio/mpeg">
+<h2 style="text-align:center;margin-bottom:20px;font-size:32px;">
 
-</audio>
+💸 Live Donation Alerts
+
+</h2>
+
+<iframe
+src="https://www.donationalerts.com/widget/alerts?group_id=1&token=JOnKWHPAkbb9uQlx17hi"
+width="100%"
+height="320"
+frameborder="0"
+style="
+border:none;
+border-radius:20px;
+overflow:hidden;
+background:transparent;
+">
+</iframe>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -558,12 +620,14 @@ Made with 🌸 for the community
 
 let donors = [
 
+{name:"Илюша",amount:999,message:"real top donor fr"},
 {name:"kai",amount:5,message:"w project fr"},
 {name:"mika",amount:2,message:"what is this gng 😭"},
-{name:"noah",amount:5,message:"this site clean ngl"},
 {name:"luna",amount:2,message:"thats good fr"}
 
 ];
+
+/* LEADERBOARD */
 
 function renderLeaderboard(){
 
@@ -573,11 +637,7 @@ const board=document.getElementById("leaderboard");
 
 board.innerHTML="";
 
-let total=0;
-
 donors.forEach((donor,index)=>{
-
-total+=donor.amount;
 
 let row=document.createElement("tr");
 
@@ -603,19 +663,11 @@ board.appendChild(row);
 
 });
 
-document.getElementById("total").innerHTML="$"+total;
-
-document.getElementById("supporters").innerHTML=donors.length;
-
-document.getElementById("topName").innerHTML="👑 "+donors[0].name;
-
-document.getElementById("topAmount").innerHTML="$"+donors[0].amount;
-
 }
 
 renderLeaderboard();
 
-/* LIVE DONATION CHAT */
+/* DONATION CHAT */
 
 function renderMessages(){
 
@@ -644,7 +696,7 @@ messages.appendChild(div);
 
 renderMessages();
 
-/* FAKE RANDOM DONATIONS */
+/* FAKE LIVE CHAT */
 
 let randomDonations=[
 
@@ -663,11 +715,11 @@ setInterval(()=>{
 
 let random=randomDonations[Math.floor(Math.random()*randomDonations.length)];
 
-donors.unshift(random);
+donors.push(random);
 
-if(donors.length>4){
+if(donors.length>8){
 
-donors.pop();
+donors.splice(4,1);
 
 }
 
@@ -675,9 +727,18 @@ renderLeaderboard();
 
 renderMessages();
 
-},10000);
+},12000);
 
-/* MUSIC */
+/* ONLINE COUNTER */
+
+setInterval(()=>{
+
+document.getElementById("online").innerHTML=
+Math.floor(Math.random()*60)+90;
+
+},5000);
+
+/* MUSIC AUTOPLAY FIX */
 
 window.addEventListener("click",()=>{
 
@@ -689,3 +750,4 @@ document.getElementById("bgmusic").play();
 
 </body>
 </html>
+```
